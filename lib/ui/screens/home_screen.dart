@@ -1,7 +1,7 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:untitled/constants/app_textstyle.dart';
+
+import '../widgets/course_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,7 +12,8 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(10.0),
-          child: Column(crossAxisAlignment: CrossAxisAlignment.start,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Row(
                 children: [
@@ -42,12 +43,13 @@ class HomePage extends StatelessWidget {
                       )
                     ],
                   ),
-                  const SizedBox(
-                    width: 180,
-                  ),
-                  const Icon(
-                    Icons.notifications,
-                    size: 30,
+                  Spacer(),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 15),
+                    child: const Icon(
+                      Icons.notifications,
+                      size: 30,
+                    ),
                   ),
                 ],
               ),
@@ -84,9 +86,7 @@ class HomePage extends StatelessWidget {
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
           itemCount: 15,
-          itemBuilder: (BuildContext context, int index) => const Card(
-            child: Center(child: Text('Dummy Card Text')),
-          ),
+          itemBuilder: (BuildContext context, int index) => CourseCard(),
         ));
   }
 
@@ -96,11 +96,13 @@ class HomePage extends StatelessWidget {
       children: [
         Text(
           label,
-          style: AppTextStyle.appDefaultSTextStyle.copyWith(color: Colors.grey),
+          style: AppTextStyle.appDefaultSTextStyle.copyWith(
+              color: Colors.black87, fontSize: 15, fontWeight: FontWeight.w600),
         ),
         Text(
           'See all',
-          style: AppTextStyle.appDefaultSTextStyle.copyWith(color: Colors.grey),
+          style: AppTextStyle.appDefaultSTextStyle.copyWith(
+              color: Colors.black54, fontSize: 15, fontWeight: FontWeight.w600),
         )
       ],
     );
@@ -110,3 +112,4 @@ class HomePage extends StatelessWidget {
         height: 10,
       );
 }
+

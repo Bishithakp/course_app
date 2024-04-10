@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../constants/app_textstyle.dart';
+import '../widgets/course_card.dart';
 
 class ChatPage extends StatelessWidget {
   const ChatPage({super.key});
@@ -49,9 +50,7 @@ class ChatPage extends StatelessWidget {
           shrinkWrap: true,
           scrollDirection: Axis.horizontal,
           itemCount: 15,
-          itemBuilder: (BuildContext context, int index) => const Card(
-            child: Center(child: Text('Dummy Card Text')),
-          ),
+          itemBuilder: (BuildContext context, int index) =>  CourseCard()
         ));
   }
 
