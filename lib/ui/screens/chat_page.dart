@@ -8,9 +8,9 @@ class ChatPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Padding(
+    return Scaffold(
+      body: SafeArea(
+        child: Padding(
           padding: const EdgeInsets.all(10.0),
           child: Column(
             children: [
@@ -60,11 +60,13 @@ class ChatPage extends StatelessWidget {
       children: [
         Text(
           label,
-          style: AppTextStyle.appDefaultSTextStyle.copyWith(color: Colors.grey),
+          style: AppTextStyle.appDefaultSTextStyle.copyWith(
+              color: Colors.black87, fontSize: 15, fontWeight: FontWeight.w600),
         ),
         Text(
           'See all',
-          style: AppTextStyle.appDefaultSTextStyle.copyWith(color: Colors.grey),
+          style: AppTextStyle.appDefaultSTextStyle.copyWith(
+              color: Colors.black54, fontSize: 15, fontWeight: FontWeight.w600),
         )
       ],
     );
